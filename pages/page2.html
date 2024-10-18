@@ -1,12 +1,78 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="UTF-8">
-	<title>Ciekawa strona nr 1</title>
+    <meta charset="UTF-8">
+    <title>Ciekawa strona nr 1</title>
 </head>
+
 <body style="background-color:#E9EBDC;">
-	<p>
-		<a href="../index.html">Wróć na stronę główną!</a>
-	</p>
+    <form action="/action_page.php" method="post">
+        <table>
+            <tr>
+                <td>Podaj imię:</td>
+                <td><input type="text" id="fname" name="fname" placeholder="Imię"></td>
+            </tr>
+            <tr>
+                <td>Podaj nazwisko:</td>
+                <td><input type="text" id="lname" name="lname" placeholder="Nazwisko"></td>
+            </tr>
+            <tr>
+                <td>Podaj państwo:</td>
+                <td><input type="text" id="country" name="country" placeholder="Państwo"></td>
+            </tr>
+            <tr>
+                <td>Podaj miasto:</td>
+                <td><input type="text" id="city" name="city" placeholder="Miasto"></td>
+            </tr>
+            <tr>
+                <td>Podaj ulicę:</td>
+                <td><input type="text" id="street" name="street" placeholder="Ulica"></td>
+            </tr>
+            <tr>
+                <td>Podaj numer budynku:</td>
+                <td><input type="text" id="building_number" name="building_number" placeholder="Numer budynku"></td>
+            </tr>
+            <tr>
+                <td>Podaj numer lokalu:</td>
+                <td><input type="text" id="apartment_number" name="apartment_number" placeholder="Numer lokalu"></td>
+            </tr>
+            <tr>
+                <td>Podaj datę urodzenia:</td>
+                <td><input type="date" id="birthdate" name="birthdate"></td>
+            </tr>
+            <tr>
+                <td>Czy posiadasz prawo jazdy:</td>
+                <td>
+                    <input type="radio" id="licenseYes" name="license" value="yes">
+                    <label for="licenseYes">Tak</label>
+                    <input type="radio" id="licenseNo" name="license" value="no">
+                    <label for="licenseNo">Nie</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Wybierz płeć:</td>
+                <td>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Mężczyzna</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Kobieta</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Hasło:</td>
+                <td><input type="password" id="password" name="password" placeholder="Hasło"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align:center;">
+                    <input type="submit" value="Wyślij swoje zgłoszenie">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <p>
+        <a href="../index.html">Wróć na stronę główną!</a>
+    </p>
 </body>
+
 </html>
