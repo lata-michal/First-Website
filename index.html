@@ -4,20 +4,24 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Michał Lata</title>
+	<link rel="stylesheet" href="styles.css">
 </head>
 
-<body style="background-color:#E9EBDC;">
-	<h2 style="color:#F4007E">Strona Michała Laty</h2>
-	<hr>
-	<p>
-		<a href="pages/page1.html">Ciekawa strona numer 1</a>
-	</p>
-	<p>
-		<a href="pages/page2.html">Ciekawa strona numer 2</a>
-	</p>
-	<hr>
-	<br>
-	<img src="images/ciekawastrona.jpg" width=200 height=200>
+<body>
+	<div class="container">
+		<h2 class="header">Strona Michała Laty</h2>
+		<div class="content-grid-vertical">
+			<div class="content-item" style="border: 0px;box-shadow: 0px 0px 0px; margin-top: 40px;">
+				<a href="pages/page1.html" class="back-link">Ciekawa strona numer 1</a>
+			</div>	
+			<div class="content-item" style="border: 0px;box-shadow: 0px 0px 0px">
+				<a href="pages/page2.html" class="back-link">Ciekawa strona numer 2</a>
+			</div>
+			<div class="footer-image">
+				<img src="images/ciekawastrona.jpg">
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>
