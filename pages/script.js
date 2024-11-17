@@ -5,12 +5,7 @@ function appendToDisplay(value) {
 
 function calculateResult() {
     try {
-        let expression = document.getElementById("display").value;
-        if (/[^0-9+\-*/().\s]/.test(expression)) {
-            alert("Niepoprawny zapis działań matematycznych!");
-            return;
-        }
-        document.getElementById("display").value = eval(expression);
+        document.getElementById("display").value = eval(document.getElementById("display").value);
     }
     catch(e) {
         alert("Niepoprawny zapis działań matematycznych!")
@@ -104,7 +99,6 @@ function validateForm(event) {
         return;
     }
 
-    alert("Formularz został poprawnie wypełniony! Przeładowanie strony.");
     event.target.submit();
 }
 
