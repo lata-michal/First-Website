@@ -23,22 +23,23 @@ function validateForm(event) {
     let firstName = document.getElementById("fname").value;
     let lastName = document.getElementById("lname").value;
     let phoneNumber = document.getElementById("phonenumber").value;
-    let birthDate = document.getElementById("birthdate").value;
-    let buildingNumber = document.getElementById("building_number").value;
     let country = document.getElementById("country").value;
     let city = document.getElementById("city").value;
+    let street = document.getElementById("street").value;
+    let buildingNumber = document.getElementById("building_number").value;
     let apartmentNumber = document.getElementById("apartment_number").value;
+    let birthDate = document.getElementById("birthdate").value;
     let license = document.querySelector('input[name="license"]:checked');
     let gender = document.querySelector('input[name="gender"]:checked');
     let password = document.getElementById("password").value;
     
     let firstNameRegex = /^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+$/;
-    let lastNameRegex = /^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+(?:[-\s][A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+)?$/;
+    let lastNameRegex = /^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+([-\s][A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+)?$/;
     let phoneRegex = /^\d{9}$/;
-    let buildingNumberRegex = /^\d+[A-Za-z]?$/;
-    let countryCityRegex = /^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+(?:[-\s][A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+)?$/;
-    let apartmentNumberRegex = /^\d+[A-Za-z]?$/;
-    
+    let buildingApartmentNumberRegex = /^\d+[A-Za-z]?$/;
+    let countryRegex = /^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+([-\s][A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+){0,9}$/;
+    let cityStreetRegex = /^[A-ZĄĆĘŁŃÓŚŹŻa-ząćęłńóśźż0-9]+([-\s][A-ZĄĆĘŁŃÓŚŹŻa-ząćęłńóśźż0-9]+){0,9}$/;
+
     if (!firstNameRegex.test(firstName)) {
         alert("Podaj poprawne imię (musi zaczynać się dużą literą, a następne litery muszą być małe)." );
         return;
@@ -54,28 +55,33 @@ function validateForm(event) {
         return;
     }
 
-    if (!birthDate) {
-        alert("Podaj datę urodzenia.");
+    if (!countryRegex.test(country)) {
+        alert("Podaj poprawne państwo (każdy człon musi zaczynać się dużą literą i nie może zawierać cyfr).");
         return;
     }
 
-    if (!buildingNumberRegex.test(buildingNumber)) {
+    if (!cityStreetRegex.test(city)) {
+        alert("Podaj poprawną miejscowość (cyfry oraz duże i małe litery są dozwolone).");
+        return;
+    }
+
+    if (!cityStreetRegex.test(street)) {
+        alert("Podaj poprawną ulicę (cyfry oraz duże i małe litery są dozwolone).");
+        return;
+    }
+
+    if (!buildingApartmentNumberRegex.test(buildingNumber)) {
         alert("Podaj poprawny numer budynku (może zawierać cyfry i opcjonalnie jedną literę)." );
         return;
     }
 
-    if (!apartmentNumberRegex.test(apartmentNumber)) {
+    if (!buildingApartmentNumberRegex.test(apartmentNumber)) {
         alert("Podaj poprawny numer lokalu (może zawierać cyfry i opcjonalnie jedną literę)." );
         return;
     }
 
-    if (!countryCityRegex.test(country)) {
-        alert("Podaj poprawne państwo (musi zaczynać się dużą literą i nie może zawierać cyfr).");
-        return;
-    }
-
-    if (!countryCityRegex.test(city)) {
-        alert("Podaj poprawne miasto (musi zaczynać się dużą literą i nie może zawierać cyfr).");
+    if (!birthDate) {
+        alert("Podaj datę urodzenia.");
         return;
     }
 
@@ -94,7 +100,7 @@ function validateForm(event) {
         return;
     }
 
-    if (!firstName || !lastName || !phoneNumber || !birthDate || !buildingNumber || !country || !city || !apartmentNumber || !password) {
+    if (!firstName || !lastName || !phoneNumber || !country || !city || !street || !buildingNumber || !apartmentNumber || !birthDate || !license || !gender || !password) {
         alert("Wszystkie pola muszą być wypełnione.");
         return;
     }
