@@ -1,3 +1,35 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+header("Refresh: 3; URL=login.php");
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Ciekawe niezalogowanko</title>
+	<link rel="stylesheet" href="../styles.css">
+	<style>
+		body {
+			font-size: 1em
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h2 class="header">Nie jesteś zalogowany! Za chwilę zostaniesz przekierowany na stronę logowania.</h2>
+	</div>
+</body>
+
+</html>
+<?php
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
