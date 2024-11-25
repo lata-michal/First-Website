@@ -4,7 +4,7 @@ This repository hosts an educational project for my university courses. The proj
 
 ## Live Site
 
-The website is hosted on DigitalOcean and is available at: [https://seashell-app-32qag.ondigitalocean.app/](https://seashell-app-32qag.ondigitalocean.app/).
+The website is hosted on DigitalOcean and is available at: [https://seashell-app-32qag.ondigitalocean.app/](https://seashell-app-6cbyv.ondigitalocean.app/).
 
 ## Deployment
 
