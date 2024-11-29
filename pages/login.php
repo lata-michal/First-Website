@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-    header("Refresh: 3; URL=../index.html");
+    header("Refresh: 10; URL=../index.html");
     ?>
 <!DOCTYPE html>
 <html>
@@ -37,9 +37,18 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     exit;
 }
 
+if(isset($_GET['param']))
+{
+    $param = $_GET['param'];
+}
+else 
+{
+    $param = "../index.html";
+}
+
 if($_SERVER['REQUEST_METHOD']==='POST') {
     $hardcoded_username = "admin";
-    $hardcoded_password = "admin";
+    $hardcoded_password = "1da1231!9r83ms";
 
     $username = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
@@ -48,7 +57,7 @@ if($_SERVER['REQUEST_METHOD']==='POST') {
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
 
-        header("Location: ../index.html");
+        header("Location: " . $_POST['loc']);
         exit;
     } else {
         header("Refresh: 3; URL=login.php");
@@ -100,7 +109,8 @@ if($_SERVER['REQUEST_METHOD']==='POST') {
                 </div>
                 <div class="form-group">
                     <label for="password">Podaj hasło:</label>
-                    <input type="password" id="password" name="password" value="admin" required>
+                    <input type="password" id="password" name="password" value="1da1231!9r83ms" required>
+                    <input type="hidden" name="loc" value="<?php echo $param; ?>">
                 </div>
                 <div class="form-submit">
                     <input type="submit" value="Zaloguj się">

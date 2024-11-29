@@ -18,7 +18,7 @@ $password = $_POST['password'] ?? '';
 
 <head>
 	<meta charset="UTF-8">
-	<title>Michał Lata</title>
+	<title>Ciekawe wyświetlanie</title>
 	<link rel="stylesheet" href="../styles.css">
 	<style>
 		body {

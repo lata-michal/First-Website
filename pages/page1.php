@@ -2,7 +2,7 @@
 session_start();
 
 if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-header("Refresh: 3; URL=login.php");
+header("Refresh: 3; URL=login.php?param=page1.php");
 ?>
 <!DOCTYPE html>
 <html>
