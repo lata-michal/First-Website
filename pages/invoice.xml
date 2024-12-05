@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="invoice.xsl"?>
+<invoice>
+    <details>
+        <number>17584</number>
+        <dateday>16</dateday>
+        <datemonth>05</datemonth>
+        <dateyear>24</dateyear>
+        <client>Jan Kowalski</client>
+        <address>Warszawa, ul. Złota 44/4</address>
+    </details>
+    <items>
+        <item>
+            <name>Produkt A</name>
+            <quantity>2</quantity>
+            <price>50</price>
+        </item>
+        <item>
+            <name>Produkt B</name>
+            <quantity>1</quantity>
+            <price>30</price>
+        </item>
+        <item>
+            <name>Usługa C</name>
+            <quantity>3</quantity>
+            <price>20</price>
+        </item>        <item>
+            <name>Usługa D</name>
+            <quantity>4</quantity>
+            <price>15</price>
+        </item>
+    </items>
+</invoice>
